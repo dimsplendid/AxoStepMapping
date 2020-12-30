@@ -12,7 +12,6 @@
 #include <string.h>
 
 /* Constant */
-#define MAXDAASIZE 1000000
 #define BOXSIZE 100
 
 /* Data Structure */
@@ -30,21 +29,3 @@ struct _Datus {
     double rms_percent_error;
     double number_of_iterations;
 };
-/* Each row of raw data */
-typedef struct _Datus Datus;
-
-/* Data */
-struct _Data {
-    char name[20];
-    Datus *data;
-    uint32_t length;
-};
-/* The object to store axo step raw data */
-typedef struct _Data Data;
-// Construct 
-int Data_init(Data **self, const char *file_name);
-int Data_calloc(Data **self);
-// Destruct
-int Data_free(Data *self);
-// Method
-int Data_print(Data *self, const char *file_name);
